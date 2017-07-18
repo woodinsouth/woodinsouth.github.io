@@ -93,16 +93,16 @@
 
 
 
-<meta name="description" content="森林很大，静悄悄。而森林里的一只木头，永远看不清森林的全貌不明白，时光将会怎样逝去新生，茂盛，溢满，和光同尘，最后锈迹斑斑死亡将会怎样揭开它的魔术帽子大海啊，继续漂流吧">
+<meta name="description" content="How to represent meaningWordnet - discrete representationmany problems:missing nuances, missing new words, subjective, labor-consuming, hard to compute accurate word similarity) symbolic - “one hot” r">
 <meta property="og:type" content="article">
-<meta property="og:title" content="欢迎来到森林">
+<meta property="og:title" content="word2vector">
 <meta property="og:url" content="woodinsouth.github.io/2017/07/05/hello-world/index.html">
 <meta property="og:site_name" content="森林记">
-<meta property="og:description" content="森林很大，静悄悄。而森林里的一只木头，永远看不清森林的全貌不明白，时光将会怎样逝去新生，茂盛，溢满，和光同尘，最后锈迹斑斑死亡将会怎样揭开它的魔术帽子大海啊，继续漂流吧">
-<meta property="og:updated_time" content="2017-07-04T21:14:18.000Z">
+<meta property="og:description" content="How to represent meaningWordnet - discrete representationmany problems:missing nuances, missing new words, subjective, labor-consuming, hard to compute accurate word similarity) symbolic - “one hot” r">
+<meta property="og:updated_time" content="2017-07-11T08:49:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="欢迎来到森林">
-<meta name="twitter:description" content="森林很大，静悄悄。而森林里的一只木头，永远看不清森林的全貌不明白，时光将会怎样逝去新生，茂盛，溢满，和光同尘，最后锈迹斑斑死亡将会怎样揭开它的魔术帽子大海啊，继续漂流吧">
+<meta name="twitter:title" content="word2vector">
+<meta name="twitter:description" content="How to represent meaningWordnet - discrete representationmany problems:missing nuances, missing new words, subjective, labor-consuming, hard to compute accurate word similarity) symbolic - “one hot” r">
 
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <title>欢迎来到森林 | 森林记</title>
+  <title>word2vector | 森林记</title>
   
 
 
@@ -202,7 +202,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -212,7 +212,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">欢迎来到森林</h1>
+          <h1 class="post-title" itemprop="name headline">word2vector</h1>
         
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T03:14:06+08:00">
                 2017-07-05
@@ -319,7 +319,43 @@
       
 
       
-        <p>森林很大，静悄悄。<br>而森林里的一只木头，<br>永远看不清森林的全貌<br>不明白，<br>时光将会怎样逝去<br>新生，茂盛，溢满，和光同尘，最后锈迹斑斑<br>死亡将会怎样揭开它的魔术帽子<br>大海啊，继续漂流吧</p>
+        <h3 id="How-to-represent-meaning"><a href="#How-to-represent-meaning" class="headerlink" title="How to represent meaning"></a>How to represent meaning</h3><h4 id="Wordnet-discrete-representation"><a href="#Wordnet-discrete-representation" class="headerlink" title="Wordnet - discrete representation"></a>Wordnet - discrete representation</h4><h5 id="many-problems"><a href="#many-problems" class="headerlink" title="many problems:"></a>many problems:</h5><p>missing nuances, missing new words, subjective, labor-consuming, hard to compute accurate word similarity)</p>
+<h5 id="symbolic-“one-hot”-representation"><a href="#symbolic-“one-hot”-representation" class="headerlink" title="symbolic - “one hot” representation:"></a>symbolic - “one hot” representation:</h5><p>no natural notion of similarity</p>
+<pre><code>&quot;You shall know a word by the company it keeps&quot;
+</code></pre><h4 id="word2vec"><a href="#word2vec" class="headerlink" title="word2vec"></a>word2vec</h4><h5 id="basic-ideas"><a href="#basic-ideas" class="headerlink" title="basic ideas:"></a>basic ideas:</h5><ul>
+<li>Word meaning is defined in terms of vector</li>
+<li>We will build a dense vector for each word type, chosen so that it is good at predicting other words appearing in its context.</li>
+<li>Define a model: P(context|W)</li>
+<li>Try to find model parameters that minimal the loss function J = 1 - P(context|W)</li>
+</ul>
+<h5 id="main-ideas-of-word2vec"><a href="#main-ideas-of-word2vec" class="headerlink" title="main ideas of word2vec:"></a>main ideas of word2vec:</h5><pre><code>predict between every word and its context words
+</code></pre><h6 id="Two-algorithms"><a href="#Two-algorithms" class="headerlink" title="Two algorithms:"></a>Two algorithms:</h6><ul>
+<li>skip-grams(SG): predict context words given target(position independent)</li>
+<li>continuous Bag of Words(CBOW): predict target word from bag-of-words context</li>
+</ul>
+<h6 id="Two-moderately-efficient-training-methods"><a href="#Two-moderately-efficient-training-methods" class="headerlink" title="Two(moderately efficient training methods):"></a>Two(moderately efficient training methods):</h6><ul>
+<li>Hierarchical softmax</li>
+<li>Negative sampling</li>
+</ul>
+<p>Naive softmax</p>
+<h5 id="details"><a href="#details" class="headerlink" title="details"></a>details</h5><h6 id="the-objective-function"><a href="#the-objective-function" class="headerlink" title="the objective function"></a>the objective function</h6><ul>
+<li>J(theta) = </li>
+<li>terminology: loss function = cost function = objective function</li>
+<li>Usual loss for probability distribution: Cross-entropy loss</li>
+<li></li>
+</ul>
+<h6 id="cross-entropy-loss"><a href="#cross-entropy-loss" class="headerlink" title="cross-entropy loss"></a>cross-entropy loss</h6><ul>
+<li>a measure to quantify the difference between two possible distributions </li>
+<li>H(p,q) = Ep(-log q) = H(p) + Dkl(p||q)</li>
+<li>In langauge modeling, the true distributuon P is unknown, so suppose it as a universal distribution over N.</li>
+</ul>
+<h6 id="Kullback-Leibler-divergence"><a href="#Kullback-Leibler-divergence" class="headerlink" title="Kullback-Leibler divergence"></a>Kullback-Leibler divergence</h6><ul>
+<li>in the context of machine learning, it is often called the information gained achieved if P is used instend of Q.</li>
+<li>Expressed in the language of Bayesian inference, it is  a measure of the information gained when one revises one’s belif from the prior probability distribution Q to the posteriir probability distribution P.</li>
+<li>In other words, it is the amount of information lost when Q is used to approximate.</li>
+<li>In applications, P typically represents the “ture” distribution, while Q represents a thery, model, description or approximation of P</li>
+<li>Dkl(P||Q) = </li>
+</ul>
 
       
     </div>
@@ -362,8 +398,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/05/清晨/" rel="prev" title="清晨">
-                清晨 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/14/mmm/" rel="prev" title="挂一会大概没事？">
+                挂一会大概没事？ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -411,8 +447,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -428,22 +473,13 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">articles</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
 
           
 
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
-              
-            </div>
           
 
         </nav>
@@ -465,6 +501,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-represent-meaning"><span class="nav-number">1.</span> <span class="nav-text">How to represent meaning</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Wordnet-discrete-representation"><span class="nav-number">1.1.</span> <span class="nav-text">Wordnet - discrete representation</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#many-problems"><span class="nav-number">1.1.1.</span> <span class="nav-text">many problems:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#symbolic-“one-hot”-representation"><span class="nav-number">1.1.2.</span> <span class="nav-text">symbolic - “one hot” representation:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#word2vec"><span class="nav-number">1.2.</span> <span class="nav-text">word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#basic-ideas"><span class="nav-number">1.2.1.</span> <span class="nav-text">basic ideas:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#main-ideas-of-word2vec"><span class="nav-number">1.2.2.</span> <span class="nav-text">main ideas of word2vec:</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Two-algorithms"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Two algorithms:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Two-moderately-efficient-training-methods"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">Two(moderately efficient training methods):</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#details"><span class="nav-number">1.2.3.</span> <span class="nav-text">details</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#the-objective-function"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">the objective function</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cross-entropy-loss"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">cross-entropy loss</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Kullback-Leibler-divergence"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">Kullback-Leibler divergence</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -491,11 +543,11 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Thème -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
