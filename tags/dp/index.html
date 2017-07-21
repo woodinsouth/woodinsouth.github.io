@@ -95,7 +95,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="森林记">
-<meta property="og:url" content="woodinsouth.github.io/index.html">
+<meta property="og:url" content="woodinsouth.github.io/tags/dp/index.html">
 <meta property="og:site_name" content="森林记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="森林记">
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="woodinsouth.github.io/"/>
+  <link rel="canonical" href="woodinsouth.github.io/tags/dp/"/>
 
 
 
 
 
-  <title>森林记</title>
+  <title>Tag: dp | 森林记</title>
   
 
 
@@ -157,9 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,157 +240,43 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h1>dp<small>Tag</small>
+      </h1>
+    </div>
+
     
       
 
-  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="woodinsouth.github.io/2017/07/18/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="woodsouth">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="森林记">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/18/hello-world/" itemprop="url">word2vector</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2017/07/18/hello-world/" itemprop="url">
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span itemprop="name">word2vector</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-18T00:00:00+08:00">
-                2017-07-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+            </a>
         
-          
-            <h3 id="How-to-represent-meaning"><a href="#How-to-represent-meaning" class="headerlink" title="How to represent meaning"></a>How to represent meaning</h3><h4 id="Wordnet-discrete-representation"><a href="#Wordnet-discrete-representation" class="headerlink" title="Wordnet - discrete representation"></a>Wordnet - discrete representation</h4><h5 id="many-problems"><a href="#many-problems" class="headerlink" title="many problems:"></a>many problems:</h5><p>missing nuances, missing new words, subjective, labor-consuming, hard to compute accurate word similarity)</p>
-<h5 id="symbolic-“one-hot”-representation"><a href="#symbolic-“one-hot”-representation" class="headerlink" title="symbolic - “one hot” representation:"></a>symbolic - “one hot” representation:</h5><p>no natural notion of similarity</p>
-<pre><code>&quot;You shall know a word by the company it keeps&quot;
-</code></pre><h4 id="word2vec"><a href="#word2vec" class="headerlink" title="word2vec"></a>word2vec</h4><h5 id="basic-ideas"><a href="#basic-ideas" class="headerlink" title="basic ideas:"></a>basic ideas:</h5><ul>
-<li>Word meaning is defined in terms of vector</li>
-<li>We will build a dense vector for each word type, chosen so that it is good at predicting other words appearing in its context.</li>
-<li>Define a model: P(context|W)</li>
-<li>Try to find model parameters that minimal the loss function J = 1 - P(context|W)</li>
-</ul>
-<h5 id="main-ideas-of-word2vec"><a href="#main-ideas-of-word2vec" class="headerlink" title="main ideas of word2vec:"></a>main ideas of word2vec:</h5><pre><code>predict between every word and its context words
-</code></pre><h6 id="Two-algorithms"><a href="#Two-algorithms" class="headerlink" title="Two algorithms:"></a>Two algorithms:</h6><ul>
-<li>skip-grams(SG): predict context words given target(position independent)</li>
-<li>continuous Bag of Words(CBOW): predict target word from bag-of-words context</li>
-</ul>
-<h6 id="Two-moderately-efficient-training-methods"><a href="#Two-moderately-efficient-training-methods" class="headerlink" title="Two(moderately efficient training methods):"></a>Two(moderately efficient training methods):</h6><ul>
-<li>Hierarchical softmax</li>
-<li>Negative sampling</li>
-</ul>
-<p>Naive softmax</p>
-<h5 id="details"><a href="#details" class="headerlink" title="details"></a>details</h5><h6 id="the-objective-function"><a href="#the-objective-function" class="headerlink" title="the objective function"></a>the objective function</h6><ul>
-<li>J(theta) = </li>
-<li>terminology: loss function = cost function = objective function</li>
-<li>Usual loss for probability distribution: Cross-entropy loss</li>
-<li></li>
-</ul>
-<h6 id="cross-entropy-loss"><a href="#cross-entropy-loss" class="headerlink" title="cross-entropy loss"></a>cross-entropy loss</h6><ul>
-<li>a measure to quantify the difference between two possible distributions </li>
-<li>H(p,q) = Ep(-log q) = H(p) + Dkl(p||q)</li>
-<li>In langauge modeling, the true distributuon P is unknown, so suppose it as a universal distribution over N.</li>
-</ul>
-<h6 id="Kullback-Leibler-divergence"><a href="#Kullback-Leibler-divergence" class="headerlink" title="Kullback-Leibler divergence"></a>Kullback-Leibler divergence</h6><ul>
-<li>in the context of machine learning, it is often called the information gained achieved if P is used instend of Q.</li>
-<li>Expressed in the language of Bayesian inference, it is  a measure of the information gained when one revises one’s belif from the prior probability distribution Q to the posteriir probability distribution P.</li>
-<li>In other words, it is the amount of information lost when Q is used to approximate.</li>
-<li>In applications, P typically represents the “ture” distribution, while Q represents a thery, model, description or approximation of P</li>
-<li>Dkl(P||Q) = </li>
-</ul>
+      </h2>
 
-          
-        
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-07-18T00:00:00+08:00"
+              content="2017-07-18" >
+          07-18
+        </time>
+      </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    </header>
   </article>
 
 
     
-  </section>
+  </div>
 
   
 
