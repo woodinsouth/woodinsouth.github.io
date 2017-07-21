@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="nlp,dp," />
+  <meta name="keywords" content="Tofel," />
 
 
 
@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="How to represent meaningWordnet - discrete representationmany problems:missing nuances, missing new words, subjective, labor-consuming, hard to compute accurate word similarity) symbolic - “one hot” r">
-<meta name="keywords" content="nlp,dp">
+<meta name="description" content="current cituationNow I’m extremely anxious about my tofel test in 8.26. I have planned to take the test from when I was a freshman but put it off to now… Besides, I can’t spend my all day to review fo">
+<meta name="keywords" content="Tofel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="word2vector">
-<meta property="og:url" content="woodinsouth.github.io/2017/07/18/hello-world/index.html">
+<meta property="og:title" content="tofel weekly record 0">
+<meta property="og:url" content="woodinsouth.github.io/2017/07/18/record/index.html">
 <meta property="og:site_name" content="森林记">
-<meta property="og:description" content="How to represent meaningWordnet - discrete representationmany problems:missing nuances, missing new words, subjective, labor-consuming, hard to compute accurate word similarity) symbolic - “one hot” r">
-<meta property="og:updated_time" content="2017-07-21T17:41:50.000Z">
+<meta property="og:description" content="current cituationNow I’m extremely anxious about my tofel test in 8.26. I have planned to take the test from when I was a freshman but put it off to now… Besides, I can’t spend my all day to review fo">
+<meta property="og:updated_time" content="2017-07-21T17:43:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="word2vector">
-<meta name="twitter:description" content="How to represent meaningWordnet - discrete representationmany problems:missing nuances, missing new words, subjective, labor-consuming, hard to compute accurate word similarity) symbolic - “one hot” r">
+<meta name="twitter:title" content="tofel weekly record 0">
+<meta name="twitter:description" content="current cituationNow I’m extremely anxious about my tofel test in 8.26. I have planned to take the test from when I was a freshman but put it off to now… Besides, I can’t spend my all day to review fo">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="woodinsouth.github.io/2017/07/18/hello-world/"/>
+  <link rel="canonical" href="woodinsouth.github.io/2017/07/18/record/"/>
 
 
 
 
 
-  <title>word2vector | 森林记</title>
+  <title>tofel weekly record 0 | 森林记</title>
   
 
 
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="woodinsouth.github.io/2017/07/18/hello-world/">
+    <link itemprop="mainEntityOfPage" href="woodinsouth.github.io/2017/07/18/record/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="woodsouth">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">word2vector</h1>
+          <h1 class="post-title" itemprop="name headline">tofel weekly record 0</h1>
         
 
         <div class="post-meta">
@@ -320,42 +320,13 @@
       
 
       
-        <h3 id="How-to-represent-meaning"><a href="#How-to-represent-meaning" class="headerlink" title="How to represent meaning"></a>How to represent meaning</h3><h4 id="Wordnet-discrete-representation"><a href="#Wordnet-discrete-representation" class="headerlink" title="Wordnet - discrete representation"></a>Wordnet - discrete representation</h4><h5 id="many-problems"><a href="#many-problems" class="headerlink" title="many problems:"></a>many problems:</h5><p>missing nuances, missing new words, subjective, labor-consuming, hard to compute accurate word similarity)</p>
-<h5 id="symbolic-“one-hot”-representation"><a href="#symbolic-“one-hot”-representation" class="headerlink" title="symbolic - “one hot” representation:"></a>symbolic - “one hot” representation:</h5><p>no natural notion of similarity</p>
-<pre><code>&quot;You shall know a word by the company it keeps&quot;
-</code></pre><h4 id="word2vec"><a href="#word2vec" class="headerlink" title="word2vec"></a>word2vec</h4><h5 id="basic-ideas"><a href="#basic-ideas" class="headerlink" title="basic ideas:"></a>basic ideas:</h5><ul>
-<li>Word meaning is defined in terms of vector</li>
-<li>We will build a dense vector for each word type, chosen so that it is good at predicting other words appearing in its context.</li>
-<li>Define a model: P(context|W)</li>
-<li>Try to find model parameters that minimal the loss function J = 1 - P(context|W)</li>
-</ul>
-<h5 id="main-ideas-of-word2vec"><a href="#main-ideas-of-word2vec" class="headerlink" title="main ideas of word2vec:"></a>main ideas of word2vec:</h5><pre><code>predict between every word and its context words
-</code></pre><h6 id="Two-algorithms"><a href="#Two-algorithms" class="headerlink" title="Two algorithms:"></a>Two algorithms:</h6><ul>
-<li>skip-grams(SG): predict context words given target(position independent)</li>
-<li>continuous Bag of Words(CBOW): predict target word from bag-of-words context</li>
-</ul>
-<h6 id="Two-moderately-efficient-training-methods"><a href="#Two-moderately-efficient-training-methods" class="headerlink" title="Two(moderately efficient training methods):"></a>Two(moderately efficient training methods):</h6><ul>
-<li>Hierarchical softmax</li>
-<li>Negative sampling</li>
-</ul>
-<p>Naive softmax</p>
-<h5 id="details"><a href="#details" class="headerlink" title="details"></a>details</h5><h6 id="the-objective-function"><a href="#the-objective-function" class="headerlink" title="the objective function"></a>the objective function</h6><ul>
-<li>J(theta) = </li>
-<li>terminology: loss function = cost function = objective function</li>
-<li>Usual loss for probability distribution: Cross-entropy loss</li>
-<li></li>
-</ul>
-<h6 id="cross-entropy-loss"><a href="#cross-entropy-loss" class="headerlink" title="cross-entropy loss"></a>cross-entropy loss</h6><ul>
-<li>a measure to quantify the difference between two possible distributions </li>
-<li>H(p,q) = Ep(-log q) = H(p) + Dkl(p||q)</li>
-<li>In langauge modeling, the true distributuon P is unknown, so suppose it as a universal distribution over N.</li>
-</ul>
-<h6 id="Kullback-Leibler-divergence"><a href="#Kullback-Leibler-divergence" class="headerlink" title="Kullback-Leibler divergence"></a>Kullback-Leibler divergence</h6><ul>
-<li>in the context of machine learning, it is often called the information gained achieved if P is used instend of Q.</li>
-<li>Expressed in the language of Bayesian inference, it is  a measure of the information gained when one revises one’s belif from the prior probability distribution Q to the posteriir probability distribution P.</li>
-<li>In other words, it is the amount of information lost when Q is used to approximate.</li>
-<li>In applications, P typically represents the “ture” distribution, while Q represents a thery, model, description or approximation of P</li>
-<li>Dkl(P||Q) = </li>
+        <h3 id="current-cituation"><a href="#current-cituation" class="headerlink" title="current cituation"></a>current cituation</h3><p>Now I’m extremely anxious about my tofel test in 8.26. I have planned to take the test from when I was a freshman but put it off to now… Besides, I can’t spend my all day to review for Tofel since I have so many papers to read and addictive games to play(…). As a result of it, half a month passed since my last final examination, I only finished TPO 1-5 reading and listening. My reading score is relatively acceptable from 26~28(mostly 28), while my listening score can vary from 20~25, quite upsetting. It’s interesting that there’re so many new words for me in both reading and listening, while my performance is split. Some reason might be that I can be more focused in reading since I read the passage for questions, while I was often  absent-minded in listening. Such might could answer that why I often can get full score in section 1 but made many errors in section 2. It seems necessary for person like me to take notes while listening. Beside, I have to admit sadly that I can’t escape from reciting vocabulary now, although in my life time simply reciting vocabulary never made sense.</p>
+<h3 id="plan-in-the-next-week"><a href="#plan-in-the-next-week" class="headerlink" title="plan in the next week"></a>plan in the next week</h3><p>My expected score is 95+ for a project, so I have to get 100 in my training process，maybe 28R + 25L + 27W + 20S(? I have limited time to improve my speaking thus a low expectation, and I think I’ll have to retake to improve it since so many school have requirements for speaking…sad). Writing and speaking will be my focus at home when I have more time from lab. So, next week, reading is daily practice to maintain in 28. I think it can be kept in morning, and in case of emergency, I should finish 5+ 28+ TPO reading next week. Listening will be my focus, first, I need to cover all the vocabulary categoried in varied subjects through the mp3 files, second, I should practice and develop my note-taking skills and frameworks in listening, besides, I can speak following the listening materials and even recite some of them to prapare for my speaking. And also, considering that some said that TPO1-10 is relatively simple compared to the real test while others never mentions, I will try those so-called most difficult materials next week(21-23,30+,also some said that 33+ are not so authoritative…The tofel test traing market is quite a hotchpotch…Things I can only to do is trying by myself to see if it’s true, and spending my spare time to search for more information realesed by authorities).</p>
+<h3 id="todo-lists"><a href="#todo-lists" class="headerlink" title="todo lists"></a>todo lists</h3><ul>
+<li>21-23,30+ TPOreading : finish 5+ * 28+ socre</li>
+<li>21-23,30+ listening : (training + testing) * 5</li>
+<li>covering all vocabulary * 1, </li>
+<li>improving notes framework for all traing listening (testing materials seems also necessary,maybe?)</li>
 </ul>
 
       
@@ -386,9 +357,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/nlp/" rel="tag"># nlp</a>
-          
-            <a href="/tags/dp/" rel="tag"># dp</a>
+            <a href="/tags/Tofel/" rel="tag"># Tofel</a>
           
         </div>
       
@@ -401,15 +370,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/18/record/" rel="next" title="tofel weekly record 0">
-                <i class="fa fa-chevron-left"></i> tofel weekly record 0
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/18/hello-world/" rel="prev" title="word2vector">
+                word2vector <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -529,7 +498,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-represent-meaning"><span class="nav-number">1.</span> <span class="nav-text">How to represent meaning</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Wordnet-discrete-representation"><span class="nav-number">1.1.</span> <span class="nav-text">Wordnet - discrete representation</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#many-problems"><span class="nav-number">1.1.1.</span> <span class="nav-text">many problems:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#symbolic-“one-hot”-representation"><span class="nav-number">1.1.2.</span> <span class="nav-text">symbolic - “one hot” representation:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#word2vec"><span class="nav-number">1.2.</span> <span class="nav-text">word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#basic-ideas"><span class="nav-number">1.2.1.</span> <span class="nav-text">basic ideas:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#main-ideas-of-word2vec"><span class="nav-number">1.2.2.</span> <span class="nav-text">main ideas of word2vec:</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Two-algorithms"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Two algorithms:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Two-moderately-efficient-training-methods"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">Two(moderately efficient training methods):</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#details"><span class="nav-number">1.2.3.</span> <span class="nav-text">details</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#the-objective-function"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">the objective function</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cross-entropy-loss"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">cross-entropy loss</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Kullback-Leibler-divergence"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">Kullback-Leibler divergence</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#current-cituation"><span class="nav-number">1.</span> <span class="nav-text">current cituation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plan-in-the-next-week"><span class="nav-number">2.</span> <span class="nav-text">plan in the next week</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#todo-lists"><span class="nav-number">3.</span> <span class="nav-text">todo lists</span></a></li></ol></div>
             
 
           </div>
